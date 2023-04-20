@@ -34,7 +34,6 @@ def findBigDiff(n, steps=1):
     for i in range(len(primes)):
         #  need to change how this works, for each num start at the back and loop thru
         for j in range(len(primes)-i):
-             print(primes[i] , primes[-j-1])
              if primes[i] + primes[-j-1] == n:
                 difference =  abs(primes[i] - primes[-j-1])
                 print("the primes with the bigg diff are: ",primes[i] ,"+", primes[-i-1], 'the difference is: ', difference)
@@ -53,4 +52,4 @@ def findBigDiff(n, steps=1):
 
 findBigDiff(n)
 
-# solved
+# time error for 999982
