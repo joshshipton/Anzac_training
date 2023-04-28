@@ -1,11 +1,13 @@
 n = input()
 ids = []
 
+
 def checkdick(n):
     for key, value in n.items():
         if value >= 20:
-            ids.append(key) 
-    
+            ids.append(key)
+
+
 def makedick(storedict):
     storenum = input().split()
     for i in range(0, len(storenum), 2):
@@ -13,7 +15,7 @@ def makedick(storedict):
             storedict[storenum[i]] += int(storenum[i+1])
         else:
             storedict[storenum[i]] = int(storenum[i+1])
-            
+
 
 store1dict = {}
 makedick(store1dict)
@@ -46,4 +48,4 @@ for key, value in final.items():
 
 print(len(last), end=' ')
 for item in last:
-    print(item, end= ' ')
+    print(item, end=' ')
