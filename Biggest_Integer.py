@@ -7,7 +7,7 @@
 # Given Annabelle’s original number and the digit she wishes to insert,
 # what is the largest number she can make?
 
-# get the biggest number in the string and append it to the front 
+# get the biggest number in the string and append it to the front
 
 n = str(input())
 n = n.split()
@@ -17,18 +17,18 @@ to_insert = -1
 
 
 for char in original:
-    print(char,insert)
+    print(char, insert)
     if int(char) < int(insert):
         to_insert = original.index(char)
         print('insert at' + str(to_insert))
 
         break
-if to_insert != -1: 
+if to_insert != -1:
     print(original[0:to_insert] + insert + original[to_insert:])
 
 else:
     print(original + insert)
-            
+
 
 # input, expected, got
 

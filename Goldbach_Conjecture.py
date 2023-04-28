@@ -11,6 +11,7 @@
 
 n = int(input())
 
+
 def getPrimes(n):
     primes = []
     for i in range(2, n+1):
@@ -23,7 +24,6 @@ def getPrimes(n):
             primes.append(i)
     return primes
 
-            
 
 def findBigDiff(n, steps=1):
     # here we want to point from the front and back of the list and return the first that add up to n
@@ -34,21 +34,22 @@ def findBigDiff(n, steps=1):
     for i in range(len(primes)):
         #  need to change how this works, for each num start at the back and loop thru
         for j in range(len(primes)-i):
-             if primes[i] + primes[-j-1] == n:
-                difference =  abs(primes[i] - primes[-j-1])
-                print("the primes with the bigg diff are: ",primes[i] ,"+", primes[-i-1], 'the difference is: ', difference)
+            if primes[i] + primes[-j-1] == n:
+                difference = abs(primes[i] - primes[-j-1])
+                print("the primes with the bigg diff are: ",
+                      primes[i], "+", primes[-i-1], 'the difference is: ', difference)
                 sthap = True
                 break
         if sthap:
             break
 
-    # keep calling difference until its less than 3 
+    # keep calling difference until its less than 3
     if difference < 3:
         print(steps)
     else:
         steps += 1
         findBigDiff(difference, steps)
-        
+
 
 findBigDiff(n)
 

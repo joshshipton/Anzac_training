@@ -1,54 +1,49 @@
-n = [int(item) for item in input().split()]
-
+n = input()
 ids = []
-temp_dick = {}
 
-store1 = [int(item) for item in input().split()]
-for i in range(1, len(store1), 2):
-    if store1[i-1] not in temp_dick:
-        temp_dick[store1[i-1]] = store1[i]
+def checkdick(n):
+    for key, value in n.items():
+        if value >= 20:
+            ids.append(key) 
+    
+def makedick(storedict):
+    storenum = input().split()
+    for i in range(0, len(storenum), 2):
+        if storenum[i] in storedict:
+            storedict[storenum[i]] += int(storenum[i+1])
+        else:
+            storedict[storenum[i]] = int(storenum[i+1])
+            
+
+store1dict = {}
+makedick(store1dict)
+checkdick(store1dict)
+
+store2dict = {}
+makedick(store2dict)
+checkdick(store2dict)
+
+
+store3dict = {}
+makedick(store3dict)
+checkdick(store3dict)
+
+final = {}
+
+for id in ids:
+    if id in final:
+        final[id] += 1
     else:
-         temp_dick[store1[i-1]] += store1[i]
-    for item in temp_dick:
-        if temp_dick[item] >= 20:
-            ids.append(temp_dick[item])
+        final[id] = 1
 
-print(temp_dick)
+print(final)
+last = []
 
-temp_dick = {}
-
-store2= [int(item) for item in input().split()]
-for i in range(1, len(store2), 2):
-    temp_dick[store2[i-1]] = store2[i]
-    for item in temp_dick:
-        if temp_dick[item] >= 20:
-            ids.append(temp_dick[item])
-temp_dick = {}
-store1 = [int(item) for item in input().split()]
-for i in range(1, len(store1), 2):
-    temp_dick[store1[i-1]] = store1[i]
-    for item in temp_dick:
-        if temp_dick[item] >= 20:
-            ids.append(temp_dick[item])
+for key, value in final.items():
+    if value == 3:
+        last.append(key)
 
 
-
-print(ids)
-dick = {}
-final = []
-
-for item in ids:
-    if item in dick:
-        dick[item] += 1
-    else:
-        dick[item] = 1
-
-
-for item in dick:
-    if dick[item] >= 3:
-        final.append(dick[item])
-
-
-print(len(final), end=' ')
-for item in final:
-    print(item, end=' ')
+print(len(last), end=' ')
+for item in last:
+    print(item, end= ' ')

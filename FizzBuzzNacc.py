@@ -9,7 +9,7 @@
 # Fibonacci numbers are larger than 13).
 # Given N, find the FizzBuzz string
 
-# get fib numbers up to the input 
+# get fib numbers up to the input
 
 def getFib(n):
     count = 0
@@ -21,8 +21,9 @@ def getFib(n):
         lst.append(count)
 
         num1 = num2
-        num2  = count
-    return lst 
+        num2 = count
+    return lst
+
 
 def makestring(n):
     lst = getFib(n)
@@ -32,7 +33,7 @@ def makestring(n):
             print('fizz', end='')
         else:
             print("buzz", end='')
-            
+
 
 n = int(input(""))
 makestring(n)
