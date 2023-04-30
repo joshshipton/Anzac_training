@@ -2,20 +2,30 @@ n = [int(item) for item in input().split()]
 people = [int(item) for item in input().split()]
 count = 0
 wannaMove = n[1]
+first = True
 
-def checkPlace(people, wannaMove, count):
+while True:
+    # get the index of the person who wants to move
     index = people.index(wannaMove)
-    print(index,wannaMove)
+    #check that they arent already in the right spot
     if index != wannaMove - 1:
-        print(index, wannaMove)
-        wannaMove = people[wannaMove-1]
-        count += 1 
-        checkPlace(people, wannaMove, count)
+        # check what is currently where they are meant to be 
+        inTheWay = people[wannaMove-1]
+        if first:
+            count +=2
+            first = False
+        else:
+            count += 1
+
+        if inTheWay == index + 1:
+            break
     else:
+        break
+    if index == people[wannaMove-1]:
+        break
+    if count == len(people):
+        break
 
-        return count
-
-checkPlace(people, wannaMove, count)
 print(count)
 
-#  not solved 
+#solved 
